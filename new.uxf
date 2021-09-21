@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>710</x>
+      <y>270</y>
+      <w>260</w>
+      <h>200</h>
+    </coordinates>
+    <panel_attributes>Controller
+--
+- input : Scanner
+- MyChatbot : Chatbot
+--
++ Controller() : constructor
++ start() : void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>300</x>
+      <y>270</y>
+      <w>390</w>
+      <h>200</h>
+    </coordinates>
+    <panel_attributes>Chatbot</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>20</x>
+      <y>270</y>
+      <w>270</w>
+      <h>200</h>
+    </coordinates>
+    <panel_attributes>Runner
+--
+psvm</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
