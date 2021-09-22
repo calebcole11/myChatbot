@@ -10,6 +10,16 @@ public class Chatbot
 		this.name = name;
 	}
 	
+	public String processText(String text)
+	{
+		String response = "You said: ";
+		
+		response += text + "\n";
+		
+	
+		return response;
+	}
+	
 	@Override
 	public String toString()
 	{
