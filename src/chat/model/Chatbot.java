@@ -23,7 +23,7 @@ public class Chatbot
 	@Override
 	public String toString()
 	{
-		String description = "I am a hatbot, my name is: " + name + "\n";
+		String description = "I am a Chatbot, my name is: " + name + "\n";
 		description += "My favorite topic is: coming soon";
 		
 		return description;
