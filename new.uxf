@@ -4,43 +4,53 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>710</x>
-      <y>270</y>
-      <w>260</w>
-      <h>200</h>
+      <x>330</x>
+      <y>0</y>
+      <w>300</w>
+      <h>150</h>
     </coordinates>
-    <panel_attributes>Controller
+    <panel_attributes>chat.controller :: Controller
 --
 - input : Scanner
 - MyChatbot : Chatbot
 --
 + Controller() : constructor
 + start() : void
++ interactWithChatbot(String) : String
 </panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>300</x>
-      <y>270</y>
-      <w>390</w>
-      <h>200</h>
+      <x>70</x>
+      <y>350</y>
+      <w>270</w>
+      <h>90</h>
     </coordinates>
-    <panel_attributes>Chatbot</panel_attributes>
+    <panel_attributes>chat.model :: Chatbot
+--
+- name : String
+--
++get()/set(...)
++ Chatbot(String) : constructor
++ toString() : String
+
++ processText(String) : String</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>20</x>
-      <y>270</y>
-      <w>270</w>
-      <h>200</h>
+      <x>40</x>
+      <y>0</y>
+      <w>250</w>
+      <h>90</h>
     </coordinates>
-    <panel_attributes>Runner
+    <panel_attributes>chat.controller :: Runner
 --
-psvm</panel_attributes>
+psvm
+bg=green</panel_attributes>
     <additional_attributes/>
   </element>
 </diagram>
