@@ -34,6 +34,14 @@ public class Chatbot
 			response += getTime();
 		}
 	
+		if (isPolitical(text))
+		{
+			
+		}
+		if (isPolite(text))
+		{
+			
+		}
 		
 		response += sayFarewell();
 	
