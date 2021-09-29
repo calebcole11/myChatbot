@@ -5,7 +5,7 @@
     <id>UMLClass</id>
     <coordinates>
       <x>330</x>
-      <y>0</y>
+      <y>10</y>
       <w>300</w>
       <h>150</h>
     </coordinates>
@@ -23,27 +23,37 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>70</x>
-      <y>350</y>
-      <w>270</w>
-      <h>90</h>
+      <x>30</x>
+      <y>160</y>
+      <w>280</w>
+      <h>160</h>
     </coordinates>
     <panel_attributes>chat.model :: Chatbot
 --
 - name : String
+- greetingCount : int
+- farewellCount : int
 --
 +get()/set(...)
 + Chatbot(String) : constructor
 + toString() : String
 
-+ processText(String) : String</panel_attributes>
++ processText(String) : String
+
++getDate(): String
++getTime(): String
++sayGreeting(): String
++sayFarewell(): String
++randomTopic(): String
++isPolite(String): boolean
++isPolitical(String): boolean</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
       <x>40</x>
-      <y>0</y>
+      <y>10</y>
       <w>250</w>
       <h>90</h>
     </coordinates>
