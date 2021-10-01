@@ -43,7 +43,7 @@ public class Chatbot
 			
 		}
 		
-		response += sayFarewell();
+		response += getRandomTopic();
 	
 		return response;
 	}
@@ -98,25 +98,55 @@ public class Chatbot
 	}
 	
 	public boolean isPolitical(String words)
+
 	{
 		boolean isValid = false;
 		
 		return isValid;
 	}
 	
+	@Override
 	public String toString()
 	{
-		
+		String description = "I am a Chatbot, my name is: " + name + "\n";
+		description += "My favorite top ic: coming soon";
+	
+		return description; 
 	}
 	
 	public String getDate()
 	{
+		String date = "The date is ";
 		
+		LocalDateTime currentDate = LocalDateTime.now();
+		
+		String day = currentDate.getMonth().toString();
+		
+		date += day + ", the ";
+		
+		day = currentDate.getDayOfMonth() + "";
+		
+		date += day;
+		
+		String month = " of " + currentDate.getMonth().toString();
+		
+		date += month;
+		
+		date += ", " + currentDate.getYear() + "\n";
+		
+		return date;
 	}
 	
 	public String getTime()
 	{
+		String time = "The time is ";
 		
+		LocalDateTime currentTime = LocalDateTime.now();
+		
+		time+= currentTime.getHour() + ":";
+		time += currentTime.getMinute() + "\n";
+		
+		return time;
 	}
 	
 	public String getRandomTopic()
