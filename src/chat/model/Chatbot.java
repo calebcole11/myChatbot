@@ -118,5 +118,30 @@ public class Chatbot
 	{
 		
 	}
+	
+	public String getRandomTopic()
+	{
+		String topic = "";
+		
+		ArrayList<String> randomTopics = new ArrayList<String>();
+		
+		randomTopics.add("Do you like pineapple?");
+		randomTopics.add("How much hot sauce do you like");
+		randomTopics.add("Do you like chicken wings?");
+		randomTopics.add("How many gallons of gas does your car have?");
+		randomTopics.add("I like socccer.");
+		randomTopics.add("How often do you brush your teeth?");
+		randomTopics.add("I think flossing is good for you.");
+		randomTopics.add("I don't like the dentist.");
+		randomTopics.add("Do you like to have converstations with me?");
+		randomTopics.add("How often do you use the bathroom?");
+		
+		int randomIndex = (int) (Math.random() * randomTopics.size());
+		
+		topic = randomTopics.get(randomIndex);
+		
+		
+		return topic;
+	}
 
 }
