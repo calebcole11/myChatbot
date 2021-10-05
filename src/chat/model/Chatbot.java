@@ -213,4 +213,30 @@ public String processText(String text)
 		return topic;
 	}
 
+	public boolean containsQuestion(String question)
+	{
+		boolean hasQuestion = false;
+		
+		if(question.toLowerCase().indexOf("can you") >= 0)
+		{
+			hasQuestion = true;
+		}
+		
+		if (question.toLowerCase().indexOf("will you") >= 0)
+		{
+			hasQuestion = true;
+		}
+		if (question.toLowerCase().indexOf("?") >= 0)
+		{
+			hasQuestion = true;
+		}
+		return hasQuestion;
+	}
+	
+	public String answerQuestion()
+	{
+		String answerQuestion = "";
+		
+		return answerQuestion;
+	}
 }
