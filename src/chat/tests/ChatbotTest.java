@@ -53,7 +53,7 @@ class ChatbotTest
 		Constructor [] constructors = testedBot.getClass().getDeclaredConstructors();
 		assertTrue(constructors.length == 1, "There should be only one written constructor");
 		Type[] types = constructors[0].getGenericParameterTypes();
-		assertTrue(types[0].getTypeName().equals("Java.lang.String"), "The first and only parameter should be a String");
+		assertTrue(types[0].getTypeName().equals("java.lang.String"), "The first and only parameter should be a String");
 		
 	}
 

@@ -18,7 +18,8 @@ public class Chatbot
 		this.farewellCount=4;
 	}
 	
-	public String processText(String text)
+	
+public String processText(String text)
 	{
 		String response = sayGreeting() + "\nYou said: ";
 		
@@ -56,8 +57,8 @@ public class Chatbot
 		greetings.add("Hi there!");
 		greetings.add("Aloha");
 		greetings.add("Greetings");
-		greetings.add("");
-		greetings.add("");
+		greetings.add("Hello!");
+		greetings.add("Good day!");
 		
 		greeting = greetings.get(greetingCount);
 		greetingCount++;
@@ -67,6 +68,11 @@ public class Chatbot
 		}
 		return greeting;
 	}	
+	public String getName()
+
+	{
+		return "My name is " + this.name;
+	}
 	
 	public String sayFarewell()
 	{
@@ -90,19 +96,52 @@ public class Chatbot
 		return farewell;
 	}
 	
-	public boolean isPolite(String content)
+	private boolean isPolite(String polite)
 	{
-		boolean isValid = false;
+		boolean isPolite = false;
 		
-		return isValid;
+		if (polite.toLowerCase().indexOf("please") >= 0)
+		{
+			isPolite = true;
+		}
+		if (polite.toLowerCase().indexOf("thank you") >= 0)
+		{
+			isPolite = true;
+		}
+		if (polite.toLowerCase().indexOf("thanks") >= 0)
+		{
+			isPolite = true;
+		}
+		return isPolite;
 	}
 	
-	public boolean isPolitical(String words)
+	private boolean isPolitical(String politics)
 
 	{
-		boolean isValid = false;
+		boolean isPolitical = false;
 		
-		return isValid;
+		if (politics.toLowerCase().indexOf("biden")>= 0)
+		{
+			isPolitical = true;
+		}
+		if (politics.toLowerCase().indexOf("election")>= 0)
+		{
+			isPolitical = true;
+		}
+		if (politics.toLowerCase().indexOf("politics")>= 0)
+		{
+			isPolitical = true;
+		}
+		if (politics.toLowerCase().indexOf("republican")>= 0)
+		{
+			isPolitical = true;
+		}
+		if (politics.toLowerCase().indexOf("democrat")>= 0)
+		{
+			isPolitical = true;
+		}
+		
+		return isPolitical;
 	}
 	
 	@Override
@@ -114,13 +153,13 @@ public class Chatbot
 		return description; 
 	}
 	
-	public String getDate()
+	private String getDate()
 	{
 		String date = "The date is ";
 		
 		LocalDateTime currentDate = LocalDateTime.now();
 		
-		String day = currentDate.getMonth().toString();
+		String day = currentDate.getDayOfWeek().toString();
 		
 		date += day + ", the ";
 		
@@ -137,7 +176,7 @@ public class Chatbot
 		return date;
 	}
 	
-	public String getTime()
+	private String getTime()
 	{
 		String time = "The time is ";
 		
@@ -149,7 +188,7 @@ public class Chatbot
 		return time;
 	}
 	
-	public String getRandomTopic()
+	private String getRandomTopic()
 	{
 		String topic = "";
 		
