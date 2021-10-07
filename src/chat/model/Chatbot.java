@@ -44,6 +44,11 @@ public String processText(String text)
 			
 		}
 		
+		if (containsQuestion(text))
+		{
+			response += answerQuestion(text);
+		}
+		
 		response += getRandomTopic();
 	
 		return response;
@@ -233,10 +238,34 @@ public String processText(String text)
 		return hasQuestion;
 	}
 	
-	public String answerQuestion()
+	public String answerQuestion(String words)
 	{
-		String answerQuestion = "";
+		String answer = "";
 		
-		return answerQuestion;
+		int meSpot = words.toLowerCase().indexOf("me");
+		int youSpot = words.toLowerCase().indexOf("you");
+		
+		if (meSpot == -1 && youSpot == -1)
+		{
+			answer += "You said: " + words;
+		}
+		else if (meSpot >= 0)
+		{
+			String response = words.substring(0, meSpot);
+			response += "you";
+			response += words.substring(meSpot + 2);
+			answer += response;
+		}
+		else
+		{
+			String response = words.substring(0, youSpot);
+			response += "me";
+			response += words.substring(youSpot + 3);
+			answer += response;
+		}
+		
+		answer += "I think " + getRandomTopic();
+		
+		return answer;
 	}
 }
