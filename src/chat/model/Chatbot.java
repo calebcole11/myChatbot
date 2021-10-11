@@ -3,7 +3,11 @@ package chat.model;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 
-
+/**
+ * The model for our Chatbot project, used to explore string methods and text processing. Not a smart chatbot.
+ * @author calebcole
+ *
+ */
 public class Chatbot
 {
 	private String name;
@@ -18,7 +22,11 @@ public class Chatbot
 		this.farewellCount=4;
 	}
 	
-	
+	/**
+	 * Processes the supply text and provides a response for external method calls.
+	 * @param text The text sent from the user via the Controller.
+	 * @return The chatbot's answer to continue the discussion.
+	 */
 public String processText(String text)
 	{
 		String response = sayGreeting() + "\nYou said: ";
@@ -53,6 +61,11 @@ public String processText(String text)
 	
 		return response;
 	}
+
+/**
+ * Greetings which are said when first introducing the chatbot, or as a response.
+ * @return Returns a greeting.
+ */
 	public String sayGreeting()
 	{
 		String greeting = "";
@@ -73,12 +86,20 @@ public String processText(String text)
 		}
 		return greeting;
 	}	
+	/**
+	 * This gets a name.
+	 * @return returns "My name is" and then the name.
+	 */
 	public String getName()
 
 	{
 		return "My name is " + this.name;
 	}
 	
+	/**
+	 * A list of farewells which are used at the end of the conversations.
+	 * @return Returns one of the farewells.
+	 */
 	public String sayFarewell()
 	{
 		String farewell = "";
@@ -100,7 +121,11 @@ public String processText(String text)
 		
 		return farewell;
 	}
-	
+	/**
+	 * Determines what is polite and if it is false or not.
+	 * @param polite Specifies which words are considered polite.
+	 * @return returns whether the phrase is polite or not.
+	 */
 	private boolean isPolite(String polite)
 	{
 		boolean isPolite = false;
@@ -120,6 +145,11 @@ public String processText(String text)
 		return isPolite;
 	}
 	
+	/**
+	 * Determines if a phrase or word is a political phrase or word.
+	 * @param politics Determines words or phrases related to politics.
+	 * @return the conditions for political phrases or words.
+	 */
 	private boolean isPolitical(String politics)
 
 	{
