@@ -248,7 +248,7 @@ public String processText(String text)
 		return topic;
 	}
 
-	public boolean containsQuestion(String question)
+	private boolean containsQuestion(String question)
 	{
 		boolean hasQuestion = false;
 		
@@ -268,7 +268,7 @@ public String processText(String text)
 		return hasQuestion;
 	}
 	
-	public String answerQuestion(String words)
+	private String answerQuestion(String words)
 	{
 		String answer = "";
 		

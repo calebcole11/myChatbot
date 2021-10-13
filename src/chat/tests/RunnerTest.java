@@ -3,7 +3,7 @@ package chat.tests;
 /**
  * Project imports
  */
-import chat.controller.Runner2;
+import chat.controller.Runner;
 /**
  * Reflection imports
  */
@@ -23,12 +23,12 @@ import org.junit.jupiter.api.Test;
 class RunnerTest
 {
 
-	private Runner2 testedRunner;
+	private Runner testedRunner;
 
 	@BeforeEach
 	public void setUp() throws Exception
 	{
-		testedRunner = new Runner2();
+		testedRunner = new Runner();
 	}
 
 	@AfterEach
