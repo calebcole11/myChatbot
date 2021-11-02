@@ -20,25 +20,22 @@ public class Controller
 	
 	public void start()
 	{
-	//	System.out.println(myChatbot);
-		view.displayMessage(myChatbot.toString());
-//		System.out.println("What do you want to talk about?");
-//		
-//		String userText = input.nextLine();
+		view.displayMessage(myChatbot.sayGreeting());
+
 		String userText = view.askQuestion("what do you want to talk about?");
 		while (!userText.equals("quit"))
 		{
 			String response = interactWithChatbot(userText);
 			
-//			System.out.println(response);
+
 			
 			view.displayMessage(response);
 			
-//			System.out.println("Keep talking?");
-//			userText = input.nextLine();
+
 			
 			userText = view.askQuestion("Keep talking");
 		}
+		view.displayMessage(myChatbot.sayFarewell());
 	}
 	
 	public String interactWithChatbot(String text)

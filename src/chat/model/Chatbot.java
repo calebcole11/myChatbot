@@ -29,7 +29,7 @@ public class Chatbot
 	 */
 public String processText(String text)
 	{
-		String response = sayGreeting() + "\nYou said: ";
+		String response = "\nYou said: ";
 		
 		response += text + "\n";
 		
@@ -70,20 +70,17 @@ public String processText(String text)
 	{
 		String greeting = "";
 		
-		ArrayList<String> greetings = new ArrayList<String>();
+		String [] greetings = new String [5]; 
 		
-		greetings.add("Hi there!");
-		greetings.add("Aloha");
-		greetings.add("Greetings");
-		greetings.add("Hello!");
-		greetings.add("Good day!");
+		greetings[0] = ("Hi there!");
+		greetings [1] =("Aloha");
+		greetings [2] =("Greetings");
+		greetings[3] = ("Hello!");
+		greetings [4] =("Good day!");
 		
-		greeting = greetings.get(greetingCount);
-		greetingCount++;
-		if (greetingCount == greetings.size())
-		{
-			greetingCount = 0;
-		}
+		int random = (int) (Math.random() * greetings.length);
+		greeting = greetings[random];
+		
 		return greeting;
 	}	
 	/**
@@ -104,20 +101,16 @@ public String processText(String text)
 	{
 		String farewell = "";
 		
-		ArrayList<String> farewells = new ArrayList<String>();
+		String [] farewells = new String [5];
+		farewells [0] =("Goodbye");
+		farewells [1] =("sayonara");
+		farewells [2] =("Catch you later");
+		farewells [3] =("Bye!");
+		farewells [4] =("See you later!");
 		
-		farewells.add(farewells.size(), "Goodbye");
-		farewells.add("sayonara");
-		farewells.add("Catch you later");
-		farewells.add("Bye!");
-		farewells.add("See you later!");
-		
-		farewell = farewells.get(farewellCount);
-		farewellCount--;
-		if (farewellCount < 0)
-		{
-			farewellCount = farewells.size() -1;
-		}
+		int random =(int) (Math.random() * farewells.length);
+		farewell = farewells[random];
+	
 		
 		return farewell;
 	}
