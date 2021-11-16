@@ -36,6 +36,7 @@ public class Controller
 			userText = view.askQuestion("Keep talking");
 		}
 		view.displayMessage(myChatbot.sayFarewell());
+		view.displayMessage(myChatbot.getMostCommonWord(myChatbot.getUserInputs()));
 	}
 	
 	public String interactWithChatbot(String text)
