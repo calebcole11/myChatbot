@@ -3,6 +3,10 @@ package chat.controller;
 import java.util.Scanner;
 import chat.model.Chatbot;
 import chat.view.Popup;
+import java.util.ArrayList;
+
+import java.io.*;
+
 
 public class Controller
 {
@@ -45,5 +49,54 @@ public class Controller
 		response += myChatbot.processText(text);
 		
 		return response;
+	}
+	
+	public void handleError(Exception error)
+	{
+		String details = "Your error is: " + error.getMessage();
+		view.displayMessage(details);
+	}
+	
+	private void saveListAsText(ArrayList<String> responses, String filename)
+	{
+		File saveFile = new File(filename);
+		
+		try (PrintWriter saveText = new PrintWriter(saveFile))
+		{
+			for ( String content : responses)
+			{
+				saveText.println(content);
+			}
+		}
+	
+		catch (IOException errorFromIO)
+		{
+			handleError(errorFromIO);
+		}
+		catch (Exception genericError)
+		{
+		handleError(genericError);
+		}
+	}
+	
+	private ArrayList<String>  loadTextToList(String filename)
+	{
+		ArrayList<String> fileContents = new ArrayList<String>();
+		File source = new File(filename);
+		try (Scanner fileScanner = new Scanner(source))
+		{
+			while (fileScanner.hasNextLine())
+			{
+				fileContents.add(fileScanner.nextLine());
+			}
+		}
+		catch (IOException fileError)
+		{
+			handleError(fileError);
+		}
+		catch (Exception error)
+		{
+			handleError(error);
+		}
 	}
 }
