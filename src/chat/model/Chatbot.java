@@ -65,6 +65,7 @@ public class Chatbot
 
 		response += getRandomTopic();
 		chatbotResponse.add(response);
+		userInputs.add(text);
 		return response;
 	}
 
@@ -88,7 +89,7 @@ public class Chatbot
 		for (int index = 0; index < actualWords.size(); index++)
 		{
 			String current = actualWords.get(index);
-			int count = 0;
+			int count = 1;
 			for (int inner = index + 1; inner < actualWords.size(); inner++)
 			{
 				if (actualWords.get(inner).equalsIgnoreCase(current))
@@ -352,5 +353,14 @@ public class Chatbot
 		answer += "I think " + getRandomTopic();
 
 		return answer;
+	}
+	
+	public void setChatbotResponses(ArrayList <String> input)
+	{
+		this.chatbotResponse = input;
+	}
+	public void setUserInput(ArrayList <String> input)
+	{
+		this.userInputs = input;
 	}
 }

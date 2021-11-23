@@ -24,6 +24,12 @@ public class Controller
 	
 	public void start()
 	{
+		ArrayList<String> input = loadTextToList("user input.txt");
+		myChatbot.setUserInput(input);
+		input = loadTextToList("chat.txt");
+		myChatbot.setChatbotResponses(input);
+		
+		
 		view.displayMessage(myChatbot.sayGreeting());
 
 		String userText = view.askQuestion("what do you want to talk about?");
@@ -31,16 +37,16 @@ public class Controller
 		{
 			String response = interactWithChatbot(userText);
 			
-
-			
 			view.displayMessage(response);
-			
-
 			
 			userText = view.askQuestion("Keep talking");
 		}
 		view.displayMessage(myChatbot.sayFarewell());
 		view.displayMessage(myChatbot.getMostCommonWord(myChatbot.getUserInputs()));
+		
+		view.displayMessage("lets save some text");
+		saveListAsText(myChatbot.getUserInputs(),"user input.txt");
+		saveListAsText(myChatbot.getChatbotResponses(),"chat output.txt");
 	}
 	
 	public String interactWithChatbot(String text)
@@ -98,5 +104,6 @@ public class Controller
 		{
 			handleError(error);
 		}
+		return fileContents;
 	}
 }
