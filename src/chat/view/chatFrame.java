@@ -5,7 +5,7 @@ import javax.swing.JFrame;
 
 public class chatFrame extends JFrame
 {
-private Controller app;
+	private Controller app;
 	
 	private ChatPanel panel;
 	
@@ -21,7 +21,10 @@ private Controller app;
 	
 	private void setupFrame()
 	{
-		
+		this.setVisible(true);
+		this.setTitle("make a cool window");
+		this.setSize(800,600);
+		this.setResizable(false);
 	}
 		
 }
