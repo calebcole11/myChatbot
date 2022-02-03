@@ -5,7 +5,7 @@ import javax.swing.*;
 import chat.controller.Controller;
 import java.awt.Color;
 
-public class ChatPanel
+public class ChatPanel extends JPanel
 {
 	private JPanel chatButtonPanel;
 	private JPanel ioPanel;
@@ -58,7 +58,9 @@ public class ChatPanel
 			this.setLayout(layout);
 			this.add(chatButtonPanel);
 			this.add(ioPanel);
-			
+			this.add(chatButton);
+			this.add(chatArea);
+			this.add(chatField);
 			ioPanel.add(saveButton);
 			ioPanel.add(loadButton);
 			
