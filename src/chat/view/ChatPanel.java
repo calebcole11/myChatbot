@@ -21,6 +21,8 @@ public class ChatPanel
 	private JButton questionButton;
 	private JButton randomChatButton;
 	
+	private JButton saveButton;
+	private JButton loadButton;
 	
 	
 	private Controller app;
@@ -29,6 +31,23 @@ public class ChatPanel
 		{
 			super();
 			this.app = app;
+			
+			this.chatButtonPanel = new JPanel(new GridLayout(1,0)); 
+			this.ioPanel = new JPanel(new GridLayout(1,0));
+			
+			this.layout = new SpringLayout();
+			
+			this.chatArea = new JTextArea(20,40);
+			this.chatField = new JTextField(50);
+			
+			this.chatButton = new JButton("Chat");
+			this.dateButton = new JButton("Date");
+			this.timeButton = new JButton ("Time");
+			this.questionButton = new JButton("Question");
+			this.randomChatButton = new JButton ("Random");
+			
+			this.saveButton = new JButton("Save");
+			this.loadButton = new JButton("Load");
 		
 			setupPanel();
 			setupListeners();
