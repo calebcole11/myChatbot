@@ -21,11 +21,12 @@ public class ChatFrame extends JFrame
 	
 	private void setupFrame()
 	{
-		this.setVisible(true);
+		
 		this.setContentPane(panel);
 		this.setTitle("Title");
 		this.setSize(800,600);
 		this.setResizable(false);
+		this.setVisible(true);
 	}
 		
 }
