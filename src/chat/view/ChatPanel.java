@@ -1,11 +1,28 @@
 package chat.view;
 
-import javax.swing.JPanel;
+import java.awt.GridLayout;
+import javax.swing.*;
 import chat.controller.Controller;
 import java.awt.Color;
 
 public class ChatPanel
 {
+	private JPanel chatButtonPanel;
+	private JPanel ioPanel;
+	
+	private SpringLayout layout;
+	
+	private JTextArea chatArea;
+	private JTextField chatField;
+	
+	private JButton chatButton;
+	private JButton dateButton;
+	private JButton timeButton;
+	private JButton questionButton;
+	private JButton randomChatButton;
+	
+	
+	
 	private Controller app;
 	
 		public ChatPanel(Controller app)
