@@ -55,6 +55,17 @@ public class ChatPanel
 		}
 		private void setupPanel()
 		{
+			this.setLayout(layout);
+			this.add(chatButtonPanel);
+			this.add(ioPanel);
+			
+			ioPanel.add(saveButton);
+			ioPanel.add(loadButton);
+			
+			chatButtonPanel.add(dateButton);
+			chatButtonPanel.add(timeButton);
+			chatButtonPanel.add(questionButton);
+			chatButtonPanel.add(randomChatButton);
 			
 		}
 		private void setupListeners()
