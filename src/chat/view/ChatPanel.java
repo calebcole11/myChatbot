@@ -4,6 +4,7 @@ import java.awt.GridLayout;
 import javax.swing.*;
 import chat.controller.Controller;
 import java.awt.Color;
+import java.awt.Dimension;
 
 public class ChatPanel extends JPanel
 {
@@ -36,11 +37,27 @@ public class ChatPanel extends JPanel
 			this.ioPanel = new JPanel(new GridLayout(1,0));
 			
 			this.layout = new SpringLayout();
+			layout.putConstraint(SpringLayout.NORTH, ioPanel, 10, SpringLayout.SOUTH, chatButtonPanel);
 			
 			this.chatArea = new JTextArea(20,40);
+			layout.putConstraint(SpringLayout.SOUTH, chatArea, -175, SpringLayout.SOUTH, this);
+			layout.putConstraint(SpringLayout.WEST, ioPanel, 0, SpringLayout.WEST, chatArea);
+			layout.putConstraint(SpringLayout.EAST, ioPanel, 0, SpringLayout.EAST, chatArea);
+			layout.putConstraint(SpringLayout.WEST, chatButtonPanel, 0, SpringLayout.WEST, chatArea);
+			layout.putConstraint(SpringLayout.EAST, chatButtonPanel, 0, SpringLayout.EAST, chatArea);
+			layout.putConstraint(SpringLayout.NORTH, chatArea, 10, SpringLayout.NORTH, this);
+			layout.putConstraint(SpringLayout.WEST, chatArea, 10, SpringLayout.WEST, this);
+			layout.putConstraint(SpringLayout.EAST, chatArea, -10, SpringLayout.EAST, this);
 			this.chatField = new JTextField(50);
+			layout.putConstraint(SpringLayout.NORTH, chatField, 10, SpringLayout.SOUTH, chatArea);
+			layout.putConstraint(SpringLayout.WEST, chatField, 0, SpringLayout.WEST, chatArea);
+			layout.putConstraint(SpringLayout.EAST, chatField, 0, SpringLayout.EAST, chatArea);
 			
 			this.chatButton = new JButton("Chat");
+			layout.putConstraint(SpringLayout.NORTH, chatButtonPanel, 10, SpringLayout.SOUTH, chatButton);
+			layout.putConstraint(SpringLayout.NORTH, chatButton, 10, SpringLayout.SOUTH, chatField);
+			layout.putConstraint(SpringLayout.WEST, chatButton, 0, SpringLayout.WEST, chatField);
+			layout.putConstraint(SpringLayout.EAST, chatButton, 0, SpringLayout.EAST, chatField);
 			this.dateButton = new JButton("Date");
 			this.timeButton = new JButton ("Time");
 			this.questionButton = new JButton("Question");
@@ -55,6 +72,10 @@ public class ChatPanel extends JPanel
 		}
 		private void setupPanel()
 		{
+			
+			this.setPreferredSize(new Dimension(800, 600));
+			this.setBackground(Color.MAGENTA);
+			
 			this.setLayout(layout);
 			this.add(chatButtonPanel);
 			this.add(ioPanel);
