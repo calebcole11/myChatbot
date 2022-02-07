@@ -93,9 +93,9 @@ public class ChatPanel extends JPanel
 		private void setupListeners()
 		{
 			chatButton.addActionListener(click -> chatArea.append(app.interactWithChatbot(chatField.getText())));
-			dateButton.addActionListener(click -> chatArea.append(app.interactWithChatbot(chatField.getText(), 0)));
-			timeButton.addActionListener(click -> chatArea.append(app.interactWithChatbot(chatField.getText(), 1)));
-			questionButton.addActionListener(click -> chatArea.append(app.interactWithChatbot(chatField.getText(), 2)));
+			dateButton.addActionListener(click -> chatArea.append(app.interactWithChatbot(chatField.getText(), 1)));
+			timeButton.addActionListener(click -> chatArea.append(app.interactWithChatbot(chatField.getText(), 2)));
+			questionButton.addActionListener(click -> chatArea.append(app.interactWithChatbot(chatField.getText(), 0)));
 			randomChatButton.addActionListener(click -> chatArea.append(app.interactWithChatbot(chatField.getText(), 3)));
 
 

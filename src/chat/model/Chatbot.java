@@ -68,6 +68,35 @@ public class Chatbot
 		userInputs.add(text);
 		return response;
 	}
+	public String processText(String text, int choice)
+	{
+		String response = "";
+		if (choice == 0 && containsQuestion(text))
+		{
+			if(containsQuestion(text))
+			{
+				response += answerQuestion(text);
+			}
+			else
+			{
+				response += "not a question";
+			}
+		}
+		else if (choice == 1)
+		{
+			response += getDate();
+		}
+		else if (choice == 2)
+		{
+			response += getTime();
+		}
+		else if (choice == 3)
+		{
+			response += getRandomTopic();
+		}
+		
+		return response;
+	}
 
 	public String getMostCommonWord(ArrayList<String> source)
 	{
