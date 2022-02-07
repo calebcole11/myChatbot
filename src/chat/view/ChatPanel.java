@@ -11,6 +11,7 @@ public class ChatPanel extends JPanel
 	private JPanel chatButtonPanel;
 	private JPanel ioPanel;
 	
+	private JScrollPane chatPane;
 	private SpringLayout layout;
 	
 	private JTextArea chatArea;
@@ -39,7 +40,7 @@ public class ChatPanel extends JPanel
 			this.layout = new SpringLayout();
 			
 			this.chatArea = new JTextArea(20,40);
-			
+			this.chatPane = new JScrollPane();
 			this.chatField = new JTextField(50);
 			
 			this.chatButton = new JButton("Chat");
