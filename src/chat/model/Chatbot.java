@@ -95,6 +95,7 @@ public class Chatbot
 			response += getRandomTopic();
 		}
 		
+		
 		return response;
 	}
 

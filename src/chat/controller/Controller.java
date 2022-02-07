@@ -53,6 +53,40 @@ public class Controller
 //		saveListAsText(myChatbot.getChatbotResponses(),"chat output.txt");
 	}
 	
+	
+	public String interactWithChatbot(String text, int buttonNumber)
+	{
+		String response = "";
+		
+		if (buttonNumber == 4) //Save Button
+		{
+			saveListAsText(myChatbot.getUserInputs(), "user input.txt");
+			saveListAsText(myChatbot.getChatbotResponses(), "chat output.txt");
+			response += "Text Saved\n";
+		}
+		else if (buttonNumber == 5)
+		{
+			ArrayList<String> userInput = loadTextToList("user input.txt");
+			ArrayList<String> chatResponses = loadTextToList("chat output.txt");
+			myChatbot.setUserInput(userInput);
+			myChatbot.setChatbotResponses(chatResponses);
+			
+			for(int index = 0; index < userInput.size() && index < chatResponses.size(); index++)
+			{
+				response += "User: " + userInput.get(index) + "\n";
+				response += "Chatbot " + chatResponses.get(index) + "\n";
+			}
+			
+		}
+		else
+		{
+			response += myChatbot.processText(text,buttonNumber);
+		}
+		
+		response += myChatbot.processText(text, buttonNumber);
+		return response;
+	}
+	
 	public String interactWithChatbot(String text)
 	{
 		String response = " ";
