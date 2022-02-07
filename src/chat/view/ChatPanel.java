@@ -60,7 +60,13 @@ public class ChatPanel extends JPanel
 		
 		private void setupChatPane()
 		{
-			
+			chatArea.setLineWrap(true);
+			chatArea.setWrapStyleWord(true);
+			chatArea.setEnabled(false);
+			chatPane.setViewportView(chatArea);
+			chatPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
+			chatPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+		
 		}
 		
 		private void setupPanel()
@@ -87,6 +93,13 @@ public class ChatPanel extends JPanel
 		private void setupListeners()
 		{
 			chatButton.addActionListener(click -> chatArea.append(app.interactWithChatbot(chatField.getText())));
+			dateButton.addActionListener(click -> chatArea.append(app.interactWithChatbot(chatField.getText(), 0)));
+			timeButton.addActionListener(click -> chatArea.append(app.interactWithChatbot(chatField.getText(), 1)));
+			questionButton.addActionListener(click -> chatArea.append(app.interactWithChatbot(chatField.getText(), 2)));
+			randomChatButton.addActionListener(click -> chatArea.append(app.interactWithChatbot(chatField.getText(), 3)));
+
+
+			
 		}
 		private void setupLayout()
 		{
