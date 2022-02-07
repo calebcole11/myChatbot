@@ -6,6 +6,8 @@ import chat.view.Popup;
 import java.util.ArrayList;
 
 import java.io.*;
+import chat.view.ChatFrame;
+
 
 
 public class Controller
@@ -13,40 +15,42 @@ public class Controller
 	private Scanner input;
 	private Chatbot myChatbot;
 	private Popup view;
+	private ChatFrame frame;
 	
 	public Controller()
 	{
 		this.input = new Scanner(System.in);
 		this.myChatbot = new Chatbot ("guy");
 		this.view = new Popup();
+		this.frame = new ChatFrame(this);
 		
 	}
 	
 	public void start()
 	{
-		ArrayList<String> input = loadTextToList("user input.txt");
-		myChatbot.setUserInput(input);
-		input = loadTextToList("chat.txt");
-		myChatbot.setChatbotResponses(input);
-		
-		
-		view.displayMessage(myChatbot.sayGreeting());
-
-		String userText = view.askQuestion("what do you want to talk about?");
-		while (!userText.equals("quit"))
-		{
-			String response = interactWithChatbot(userText);
-			
-			view.displayMessage(response);
-			
-			userText = view.askQuestion("Keep talking");
-		}
-		view.displayMessage(myChatbot.sayFarewell());
-		view.displayMessage(myChatbot.getMostCommonWord(myChatbot.getUserInputs()));
-		
-		view.displayMessage("lets save some text");
-		saveListAsText(myChatbot.getUserInputs(),"user input.txt");
-		saveListAsText(myChatbot.getChatbotResponses(),"chat output.txt");
+//		ArrayList<String> input = loadTextToList("user input.txt");
+//		myChatbot.setUserInput(input);
+//		input = loadTextToList("chat.txt");
+//		myChatbot.setChatbotResponses(input);
+//		
+//		
+//		view.displayMessage(myChatbot.sayGreeting());
+//
+//		String userText = view.askQuestion("what do you want to talk about?");
+//		while (!userText.equals("quit"))
+//		{
+//			String response = interactWithChatbot(userText);
+//			
+//			view.displayMessage(response);
+//			
+//			userText = view.askQuestion("Keep talking");
+//		}
+//		view.displayMessage(myChatbot.sayFarewell());
+//		view.displayMessage(myChatbot.getMostCommonWord(myChatbot.getUserInputs()));
+//		
+//		view.displayMessage("lets save some text");
+//		saveListAsText(myChatbot.getUserInputs(),"user input.txt");
+//		saveListAsText(myChatbot.getChatbotResponses(),"chat output.txt");
 	}
 	
 	public String interactWithChatbot(String text)
